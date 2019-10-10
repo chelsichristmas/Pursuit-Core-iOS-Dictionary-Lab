@@ -12,18 +12,22 @@ var applesDict: [String: Int] = ["Adam": 3,
 
 // a. Set eveAppleCount equal to the number of apples that Eve has
 
-let eveAppleCount: Int = /*Your code here (Replace -1 with your solution)*/ -1
-//assert(eveAppleCount == 4, "Was expecting 4, but got \(eveAppleCount)")
+let eveAppleCount: Int = applesDict["Eve"] ?? -1
+assert(eveAppleCount == 4, "Was expecting 4, but got \(eveAppleCount)")
 
 // b. Change the number of apples that Adam  has to 4
 
+applesDict["Adam"] = 4
 // Your code here
-//assert(applesDict["Adam"] == 4, "Was expecting 4, but got \(String(describing: applesDict["Adam"]))")
+
+assert(applesDict["Adam"] == 4, "Was expecting 4, but got \(String(describing: applesDict["Adam"]))")
+let newAdam = applesDict.updateValue(4, forKey: "Adam")
+
 
 // c. Set calAndDanAppleCount equal to the sum of both of those
 
-let calAndDanAppleCount = /*Your code here (Replace -1 with your solution)*/ -1
-//assert(calAndDanAppleCount == 8, "Was expecting 8, but got \(calAndDanAppleCount)")
+let calAndDanAppleCount = (applesDict["Cal"] ?? 0) + (applesDict["Dan"] ?? 0)
+assert(calAndDanAppleCount == 8, "Was expecting 8, but got \(calAndDanAppleCount)")
 
 // d. Set all the values in applesDict to 0
 
@@ -155,3 +159,8 @@ var mostFrequentChar: Character = "?"
 // Your code here
 
 //assert(mostFrequentChar == "e", "Was expecting e, but got \(mostFrequentChar)")
+
+
+
+
+
